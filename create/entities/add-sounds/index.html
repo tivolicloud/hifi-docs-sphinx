@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Add Sound to Entities &mdash; High Fidelity Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/fav-icon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <link rel="next" title="Define Interactions with Avatars" href="../avatar-interactions/" />
+    <link rel="prev" title="Add a Material Entity" href="../material-entity/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="https://www.highfidelity.com">
+          
+
+          
+            
+            <img src="../../../_static/hifi-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search High Fidelity Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<p style="margin-bottom: 10px; margin-top: 10px;"><a href="https://forums.highfidelity.com/t/company-update-a-new-beginning-faq/15817"><strong>IMPORTANT</strong>: High Fidelity GitHub Will Become Private Jan 15, 2020</a></p>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../home/">HOME</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../explore/">EXPLORE</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../">CREATE</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../tools/">Create Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../avatars/">Avatars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wearables/">Wearables</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../">Entities</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../create-entities/">Create New Entities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../entity-appearance/">Change How Entities Look</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../entity-behavior/">Define an Entity's Behavior</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../entity-physics/">Apply Physics to Entities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../material-entity/">Add a Material Entity</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Add Sounds to Entities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../avatar-interactions/">Define Interactions with Avatars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hero-zone/">Prioritize Zones Within Your Domain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/">Entity Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../3d-models/">3D Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../environments/">Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../applications/">Tablet Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../script/">SCRIPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../host/">HOST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sell/">SELL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/">CONTRIBUTE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../release-notes/">RELEASE NOTES</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://apidocs.highfidelity.com">API REFERENCE</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../">HiFi Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    You are here: 
+      <li><a href="../../../"><i class="fa fa-home"></i></a> &raquo;</li>
+        
+          <li><a href="../../">Create</a> &raquo;</li>
+        
+          <li><a href="../">Entities</a> &raquo;</li>
+        
+      <li>Add Sound to Entities</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/create/entities/add-sounds.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="add-sound-to-entities">
+<h1>Add Sound to Entities<a class="headerlink" href="#add-sound-to-entities" title="Permalink to this headline">¶</a></h1>
+<p>Entities have the ability to add a collision sound, so that the entity will emit a sound every time it comes in contact, or <a class="reference external" href="entity-behavior.html">collides, with another entity</a>.</p>
+<p>To add a sound:</p>
+<ol class="simple">
+<li><p>In Interface, pull up your Tablet or HUD and go to <strong>Create</strong>.</p></li>
+<li><p>Select the entity.</p></li>
+<li><p>In the <strong>Create</strong> app, click on ‘Properties’ and scroll down to the ‘Collision’ settings.</p></li>
+<li><p>Check the box for ‘Collides’, then enter the URL of the audio file for ‘Collision Sound’.</p></li>
+</ol>
+<div class="section" id="tutorial-create-a-bouncing-ball">
+<h2>Tutorial: Create a Bouncing Ball<a class="headerlink" href="#tutorial-create-a-bouncing-ball" title="Permalink to this headline">¶</a></h2>
+<p>In this example, we will walk through the steps to create a bouncing ball that emits a sound every time it hits a wall.</p>
+<ol class="simple">
+<li><p>Create a wall to bounce your ball off of:</p>
+<ol class="simple">
+<li><p><a class="reference external" href="create-entities.html">Add a cube entity</a> to your domain.</p></li>
+<li><p><a class="reference external" href="entity-appearance.html#set-the-size-of-an-entity">Resize the entity</a> to approximately 10m wide, 10m high and 1m deep (X:10, Y:10, Z:1).</p></li>
+</ol>
+</li>
+<li><p>Create a ball by <a class="reference external" href="create-entities.html">adding a sphere entity</a> to your domain. Optionally, <a class="reference external" href="entity-appearance.html#change-the-color-of-an-entity">change the color</a> of your ball, so that it is different than your wall.</p></li>
+<li><p>In the <strong>Create</strong> app, click on ‘Properties’ and scroll down to the ‘Collision’ settings. Check the box for ‘Collides’ and ‘Dynamic’.</p></li>
+<li><p>For ‘Collision Sound’, enter the URL of your sound file. The sound must be a <em>.wav</em> file, uncompressed, 48Khz, 16 bit. The URL can be either a web address, or an ATP reference to the assets on this domain server.</p></li>
+<li><p>Scroll down to the ‘Physics’ settings. Set the ‘Gravity’ for Y to -5. This will cause your ball to fall a little more slowly than things on earth (use -9.8 if you want that). Gravity is in units of m/s<sup>2</sup>.</p></li>
+</ol>
+<p>As soon as you click off the ball, the gravity will cause the ball to fall downwards. When it hits the floor, it should stop or bounce a little and the sound should play.</p>
+<p><strong>See Also</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="entity-behavior.html#set-entity-behavior-on-collision">Set Entity Behavior on Collision</a></p></li>
+<li><p><a class="reference external" href="entity-physics.html#set-how-an-entity-moves-in-a-gravitational-field">Set How an Entity Moves in a Gravitational Field</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../avatar-interactions/" class="btn btn-neutral float-right" title="Define Interactions with Avatars" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../material-entity/" class="btn btn-neutral float-left" title="Add a Material Entity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, High Fidelity
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5066246.js"></script>
+    <!-- End of HubSpot Embed Code -->
+
+    <!-- Start Quantcast Tag -->
+    <script type="text/javascript">
+    var _qevents = _qevents || [];
+     (function() {
+       var elem = document.createElement('script');
+       elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+       elem.async = true;
+       elem.type = "text/javascript";
+       var scpt = document.getElementsByTagName('script')[0];
+       scpt.parentNode.insertBefore(elem, scpt);
+      })();
+    _qevents.push({qacct: "p-tK6PFLJY3q1s-"});
+    </script>
+    <noscript>
+     <img src="//pixel.quantserve.com/pixel/p-tK6PFLJY3q1s-.gif?labels=_fp.event.Default" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+    </noscript>
+    <!-- End Quantcast Tag -->
+
+    <!-- Start Hotjar Tracking Code for https://highfidelity.com/ -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:908553,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <!-- End Hotjar Tracking Code for https://highfidelity.com/ --> 
+
+</body>
+</html>
